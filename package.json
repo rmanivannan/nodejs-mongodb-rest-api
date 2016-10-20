@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-mongodb-rest-api",
+  "version": "0.0.1",
+  "description": "Boiler plate for REST API with oauth(login) using nodejs mongoose/mongodb expressjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmanivannan/nodejs-mongodb-rest-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "REST",
+    "oauth",
+    "login",
+    "authendication",
+    "expressjs",
+    "mongoose",
+    "jsonwebtoken",
+    "body-parser"
+  ],
+  "author": "manivannan radhakrishnan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmanivannan/nodejs-mongodb-rest-api/issues"
+  },
+  "homepage": "https://github.com/rmanivannan/nodejs-mongodb-rest-api#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "mongoose": "^4.6.4"
+  }
+}
