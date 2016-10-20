@@ -3,7 +3,7 @@ var Routes = require('./routes/index');
 var express = require("express");
 var bodyParser = require('body-parser');
 
-var connStr = 'mongodb://user2:pass2@ds059516.mlab.com:59516/mani-portfolio';
+var connStr = 'mongodb://<username>:<password>@<domainName>:<port>/<DatabaseName>';
 mongoose.connect(connStr, function(err) {
     if (err) throw err;
     console.log('Successfully connected to MongoDB');
