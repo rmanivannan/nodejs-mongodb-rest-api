@@ -1,0 +1,199 @@
+
+time line
+--------------------
+1st week(27th) to complete DB and api
+2nd week(3rd) set up container and UI basic integration
+3rd week(10th) - complete full integration with validation 
+--------------------
+
+Container - 
+Openshift - REDHAT product - shared host -less price - cupport comunity available
+heroku - salesforce.com product - shared host -less price - cupport comunity available
+
+hostgator & godaddy - no admin support we need to take care of container setups ~ 17k per year 
+
+
+UI - Changes
+
+add installer  file upload option for installer pic is missing
+there is no text field to add installer feedback in admin portal
+there is no text field in admin portal to update actual visit time in Installer visit page
+there is no select option in user ui to select finance option
+in login screen, need to add option to login as admin -> username(user), username(admin), password(admin)
+
+--------------------
+
+
+
+DB TABLES BLUE PRINT
+
+-------------------------------------------------------
+
+TABLE 1 : User
+
+id
+cid
+fname
+lname
+salutation <optional>
+username
+password
+address_l1
+address_l2
+email
+phone
+
+-------------------------------------------------------
+
+TABLE 2 : User Requirement
+
+id
+rooftop_area
+installAt
+location
+address_l1
+address_l2
+pin
+owner_salutation
+owner_fname
+owner_lname
+owner_phone
+owner_email
+installer_id
+req_visit_time
+req_visit_date
+act_visit_time
+act_visit_date
+is_installer_visited   -> Admin will mark this as true after installer visit,user will able to add feedback
+
+-------------------------------------------------------
+
+TABLE 3 : Company
+
+id
+name
+address
+type
+email
+phone
+financial_turnover
+team_strength
+total_completed_projects
+team_experience
+facilities
+cities
+bank_name
+branch_name
+
+-------------------------------------------------------
+
+TABLE 4 : installer_details
+
+id
+name
+company_id
+location
+desc
+phone
+email
+pic
+
+-------------------------------------------------------
+
+TABLE 5 : feedback
+
+id
+inst_feedback
+cust_feedback
+rating
+requirement_id
+installer_id
+
+-------------------------------------------------------
+
+TABLE 6 : Assessment_details
+// will be updated by Admin & user just view these info's
+
+id
+utility
+present_tariff
+annual_bill
+annual_consumption
+
+sys_size
+roof_area
+est_anual_prod
+enery_mix_solar
+enery_mix_grid
+
+inverter
+systemkit
+module_specifics 
+warranty_specifics 
+
+env_co2_impact
+equ_driving
+equ_carbon
+equ_coal
+
+// need to revisit below section
+fin_upfront_cost
+fin_upfront_aft_inc
+fin_upfront_anual_save
+fin_upfront_yr20_save
+
+fin_paypartial_plan1
+fin_paypartial_plan1_aft_inc
+fin_paypartial_plan1_anual_save
+fin_paypartial_plan1_yr20_save
+
+fin_paypartial_plan2
+fin_paypartial_plan2_aft_inc
+fin_paypartial_plan2_anual_save
+fin_paypartial_plan2_yr20_save
+
+paynothing_plan2
+paynothing_plan2_aft_inc
+paynothing_plan2_anual_save
+paynothing_plan2_yr20_save
+
+payment_status // this will be set by admin, out of user context
+advance_payment
+
+plan_chosen  
+
+anual_sav
+yr20_sav
+ctr_cp_sent_on <admin shuld have>
+singed_copy_res_on <admin shuld have>
+
+
+------------------------------------------------------
+
+TABLE 7 : Instillation Design & time line 
+
+// Admin will create this entry 
+
+id
+assesment_id
+design [{desc,img},{desc,img}...]
+payment_status
+approved_on
+updated_on
+installer_id
+time_ln: [{name,desc,st_time,ed_time,status},...]
+		//name may be folowing list
+		stc_asm,panel_mount,elec_conn,inverter_inst,remote_monitor,qa_live,metering_approval
+
+
+-----------------------------------------------------
+
+TABLE 8 : Referral
+
+fname
+lname
+salutation
+created_on
+username 
+status
+rewards

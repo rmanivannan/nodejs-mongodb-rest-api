@@ -1,6 +1,8 @@
-var User = require('../db-models/user-model');
+var User = require('../db-models/user');
 var jwt    = require('jsonwebtoken');
 var app =null;
+var util = require('../util');
+
 
 var UserMethods = {
     setApp: function(a) {
@@ -33,24 +35,23 @@ var UserMethods = {
 
 	},
     register:function (req, res) {
+        User.count({}, function( err, count){
+            console.log( "Number of users:", (count+1) );
+            var data = util.rmExtToUpdate(User,req);
+            data['cid'] = util.custIdFormat(count);
+            data['role'] = util.config.role.user;
+            var user = new User(data);
+            user.save(function(e,user) {
+                return util.apiResp(req,res,e,user)
+            });
+        })
 
-        var newUser = new User({
-            username : req.body.username,
-            password : req.body.password,
-            email    : req.body.email,
-            phone    : req.body.phone,
-            role     : req.body.role
+
+    },
+    update: function (req,res) {
+        User.findOneAndUpdate({ _id: req.params.id }, {$set:util.rmExtToUpdate(User,req)}, {new: true}, function(e, user){
+            return util.apiResp(req,res,e,user)
         });
-
-        newUser.save(function(e,user) {
-             if(e){
-                console.log(e);
-                return res.status(500).send();
-            }
-            //console.log(user._id)
-            return res.status(200).send();
-        });
-
     },
     logout: function (req, res) {
         // body...
