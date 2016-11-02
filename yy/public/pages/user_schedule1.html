@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>8 Minutes Energy: Installer Visit Details & Feedback</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="/public/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />	
+	<link href="/public/dist/css/8minutes.css" rel="stylesheet" type="text/css" />
+	<!-- Select2: plugin for select box styling -->
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<style type="text/css">
+		.popover{
+			max-width:100%;
+			height:200px;
+			margin-left:200px;
+		}		
+	    #map {
+			width: 350px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body class="container-fluid" style="background-color:#f0f0f0;">
+<div class="row">
+	<div class="col-xs-12 topHeader e-shadow1 bg-white" style="position:fixed; z-index:100; ">
+		<div class="row">
+			<div class="col-xs-11">
+				<img src="/public/dist/img/logo_8minutes.png" alt="8Minutes Logo">
+				<div class="pull-right grey" style="padding-top:20px;">
+					<a href="user_dashboard.html" class="navInactive">My Dashboard</a>&#8226;
+					<a href="user_explore.html" class="navActive">Go Solar</a>&#8226;
+					<a href="user_installation.html" class="navInactive">My Installations</a>&#8226;
+					<a href="user_referrals.html" class="navInactive">My Referrals</a>
+				</div>
+			</div>
+			<div class="col-xs-1" style="padding-top:20px;">
+				<div class="profileImg" style="background-image:url('/public/dist/img/me1.jpg');">&nbsp;</div>
+				<div class="dropdown" style="display:inline;">
+				  <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border:0;">
+				   <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu dropdown-menu-right" style="font-size:12px" aria-labelledby="dropdownMenu1">
+				    <li><a href="user_profile.html">MY PROFILE</a></li>
+				    <li><a href="user_contact.html">CONTACT <span style="font-weight:500;">8MINUTES</span></a></li>					
+				    <li role="separator" class="divider"></li>
+				    <li><a href="#">LOGOUT</a></li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" style="background-color:#f8f8f8; padding:5px 50px; top:55px; position:fixed; border-bottom:1px solid #ddd; z-index:99; width:100%;">
+	<div class="col-xs-12">
+		<div class="container1">
+			<ul class="progressbar">
+				<li class="active">Schedule Visit</li>
+				<li class="active">Solar Appointment</li>
+				<li>Energy Saving Proposal</li>
+				<li>Approve Contract</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div style="margin:160px;"></div>
+<h2 class="text-grey text-center" style="margin:0;">FREE Consultation Feedback</h2>
+<h4 class="text-grey text-center" style="margin:5px;">To help us serve you better, please share your installation visit feedback</h4>
+<p style="margin:30px;">
+<!-- visit feedback form -->
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10">
+		<div class="box1" style="height:300px;">
+			<div class="row" style="background-color:#f8f8f8;">
+				<div class="col-xs-12">
+					<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-pencil mar-r10"></i>Consultation Visit Experience Feedback</h3>
+				</div>
+			</div>
+			<div class="row" style="padding-top:30px;">
+				<div class="col-xs-5 text-right">Suggestions / Observations</div>
+				<div class="col-xs-7">
+					  <textarea rows="5" class="form-control" style="width:90%;"></textarea>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-xs-5 text-right">Overall Experience</div>
+				<div class="col-xs-7">
+					  <input type="radio" style="margin-right:10px;">V. Good
+					  <input type="radio" style="margin-right:10px; margin-left:10px;">Good
+					  <input type="radio" style="margin-right:10px; margin-left:10px;">OK
+					  <input type="radio" style="margin-right:10px; margin-left:10px;">Bad
+					  <input type="radio" style="margin-right:10px; margin-left:10px;">V. Bad
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-1"></div>
+</div>
+<div style="margin:50px;"></div>
+<!-- installer details -->
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10">
+  		<div class="box1" style="height:400px;">
+  			<div class="row"  style="background-color:#f8f8f8;">
+  				<div class="col-xs-12">
+  					<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-calendar-check-o mar-r10"></i>Consultation Details</h3>
+  				</div>
+  			</div>
+  			<div class="row" style="padding-top:40px;">
+  				<div class="col-xs-7 pad20 text-center" style="padding-top:0; border-right:1px solid #ddd;">
+  					<div class="row">
+  						<div class="col-xs-5 text-left"><h4 style="margin:0;">Visit Date & Time</h4></div>
+  						<div class="col-xs-7"><h3 class="text-left" style="margin:0;">16 Sep 2016 <small>(Wednesday)</small><br>02:00<small>pm</small><br></h3></div>
+  					</div>
+  					<hr>
+  					<div class="row">
+  						<div class="col-xs-5 text-left"><h4 style="margin:0;">Location</h4></div>
+  						<div class="col-xs-7">
+  							<h4 class="text-left" style="margin:0;">E-1002, Central Park 1,<br>DLF Golf Course Road,<br>Sector 43, DLF Phase 5,<br>Gurgaon,<br>Haryan 122002</h4>
+						</div>
+  					</div>					
+  					<hr>
+  					<div class="row">
+  						<div class="col-xs-5 text-left"><h4 style="margin:0;">Contact Person</h4></div>
+  						<div class="col-xs-7">
+  							<h4 class="text-left" style="margin:0;">Mrs. Malvika Tiwari</h4>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="col-xs-5 pad20 text-center" style="height:300px; padding-top:0;">
+  					<h4 style="margin:0;">Visiting Consultant's Details</h4>
+  					<div class="row" style="padding-top:30px;">
+  						<div class="col-xs-5 pad20 text-right" style="height:200px; padding-top:0;">
+  							<img src="/public/dist/img/installer.jpg" style="height:200px; border:1px solid #ddd; padding:10px;" alt="installer Photo">
+  						</div>
+  						<div class="col-xs-7 pad20 text-left" style="height:300px; padding-top:0;">
+  							<h4 style="margin:0;"><span style="font-weight:600">Mr. Jatin Santosh Kumar</span></h4>
+  							<h4>Lead technician</h4>
+  							<h4>Orion Consulting Solutions Pvt Ltd.</h4>
+  							<h4>M: 99840-23393</h4>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-sm-1"></div>
+</div>
+<div class="row">
+	<div class="col-xs-12 text-center pad20">
+		<button class="btn btn-warning" data-toggle="modal" data-target="#myModal" style="width:200px;">Submit & View Proposal</button>
+	</div>
+</div>
+<script src="/public/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+<script src="/public/dist/js/index.js"></script>
+<!-- jQuery 1.12.4 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap 3.3.78.5463 JS -->
+<script src="/public/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- Select2: plugin for styling select boxes -->
+<script src="/public/plugins/select2/select2.full.min.js" type="text/javascript"></script>
+<!-- angular JS-->
+<script src="/public/plugins/angular/angular.min.js"></script>
+<script src="/public/dist/js/search.js"></script>
+<!-- select2 -->
+<script type="text/javascript">
+$(function () {
+	//Initialize Select2 Elements
+	$(".select2").select2();
+});
+</script>
+<script>
+  function initialize() {
+    var mapCanvas = document.getElementById('map');
+    var mapOptions = {
+      center: new google.maps.LatLng(44.5403, 78.5463),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(mapCanvas, mapOptions)
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+  </body>
+</html>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div style="padding:20px;"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+			<div class="modal-body" style="padding:0 50px;">
+			<h3 id="myModalLabel">Thank you!</h3>
+			We have received your request for <b>500 mw Solar panel installation with contract option 2 (95% upfront payment)</b>. An email has been sent to your registered email address for your reference.<br><br>
+			Please note:<br><br>
+			<ul>
+				<li>In next couple of days, you will receive a detailed contract along installation details will be mailed to your registered address along with other instructions.</li>
+				<li>Please sign it and send it back our registered address along with cheque for <i class="fa fa-rupee"></i><b>2,45,000</b> in the name of <b>8 Minutes Energy</b>.<li>
+			</ul>
+			For any further enquiries please contact: <b>+91-7822-094-340</b> or email us at: <a href="mailto:switch@8minutes.com">switch@8minutes.com</a>
+			Regards,<br>
+			<img src="/public/dist/img/logo_8minutes.png" style="width:150px;" alt="8Minutes Logo">
+			</div>
+			<div class="modal-footer" style="border-top:0;">
+				<div class="text-center"><button type="button" class="btn btn-warning" onClick="document.location.href='user_proposal.html'">Close</button></div>
+			</div>
+		</div>
+	</div>
+</div>

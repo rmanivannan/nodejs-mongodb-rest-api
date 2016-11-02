@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en	">
+<head>
+	<meta charset="UTF-8">
+	<title>8 Minutes Energy: Solar Energy Details</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="../css/select2.min.css" rel="stylesheet" />
+	<link href="/public/plugins/select2/select2.min.css" rel="stylesheet" />	
+	<link href="/public/dist/css/8minutes.css" rel="stylesheet" />
+    <link href='/public/dist/css/fullpage.css' rel="stylesheet prefetch" />
+	<!-- Select2: plugin for select box styling -->
+	<link rel="stylesheet" href="/public/dist/css/style.css">
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<style type="text/css">
+		.popover{
+			max-width:100%;
+			height:200px;
+			margin-left:200px;
+		}		
+	    #map {
+			width: 350px;
+			height: 200px;
+		}
+	</style>	
+</head>
+<body class="container-fluid" style="background-color:#f0f0f0;">	
+<div class="row">
+	<div class="col-xs-12 topHeader e-shadow1 bg-white" style="position:fixed; z-index:100; ">
+		<div class="row">
+			<div class="col-xs-11">
+				<img src="/public/dist/img/logo_8minutes.png" alt="8Minutes Logo">
+				<div class="pull-right grey" style="padding-top:20px;">
+					<a href="user_dashboard.html" class="navInactive">My Dashboard</a>&#8226;
+					<a href="user_explore.html" class="navActive">Go Solar</a>&#8226;
+					<a href="user_installation.html" class="navInactive">My Installations</a>&#8226;
+					<a href="user_referrals.html" class="navInactive">My Referrals</a>
+				</div>
+			</div>
+			<div class="col-xs-1" style="padding-top:20px;">
+				<div class="profileImg" style="background-image:url('/public/dist/img/me1.jpg');">&nbsp;</div>
+				<div class="dropdown" style="display:inline;">
+				  <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border:0;">
+				   <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu dropdown-menu-right" style="font-size:12px" aria-labelledby="dropdownMenu1">
+				    <li><a href="user_profile.html">MY PROFILE</a></li>
+				    <li><a href="user_contact.html">CONTACT <span style="font-weight:500;">8MINUTES</span></a></li>					
+				    <li role="separator" class="divider"></li>
+				    <li><a href="#">LOGOUT</a></li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" style="background-color:#f8f8f8; padding:5px 50px; top:55px; position:fixed; border-bottom:1px solid #ddd; z-index:99; width:100%;">
+	<div class="col-xs-12">
+		<div class="container1">
+			<ul class="progressbar">
+				<li class="active">Schedule Visit</li>
+				<li>Solar Appointment</li>
+				<li>Energy Saving Proposal</li>
+				<li>Approve Contract</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div style="margin:20px;"></div>
+<div id="fullpage" style="vertical-align:top;">
+  <section class="vertical-scrolling" style="vertical-align:top;">
+	  <h2 class="text-grey text-center" style="margin:0;">Help us to show what solar can do for you</h2>
+	  <h4 class="text-grey text-center" style="margin:5px;">Adjust sliders to see how solar power can save you money</h4>
+	  <p style="margin:30px;">
+	  <div class="row">
+	  	<div class="col-sm-1"></div>
+	  	<div class="col-sm-5" >
+	  		<div class="box1" style="height:300px;">
+	  			<div class="row"  style="background-color:#f8f8f8;">
+	  				<div class="col-xs-12">
+	  					<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-plug mar-r10"></i>Your Current Load Profile</h3>
+	  				</div>
+	  			</div>
+	  			<div class="row">
+	  				<div class="col-xs-12 pad20" style="border-bottom:1px solid #ddd;">
+	  					<h4 class="text-center">Place for solar installation</h4>
+	  					<h2 style="display:inline;">Residential</h2>						
+	  				</div>
+	  			</div>
+	  			<div class="row">
+	  				<div class="col-xs-6 pad20" style="border-right:1px solid #ddd;">
+	  					<h4 class="text-center">Current average energy bill</h4>
+	  					<h2 style="display:inline;">34,000</h2>
+	  					<span style="display:inline; border:0; color:#f6931f; font-size:18px; font-weight:600; width:100px;"><i class="fa fa-inr"></i> / Yr</span>
+	  				</div>
+	  				<div class="col-xs-6 pad20">
+	  					<h4 class="text-center">Available rooftop area</h4>
+	  					<h2 style="display:inline;">4,000</h2>						
+	  					<span style="display:inline; border:0; color:#f6931f; font-size:18px; font-weight:600;">Sq. Ft.</span>						
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  	<div class="col-sm-5">
+	  		<div class="box1" style="height:300px;">
+	  			<div class="row"  style="background-color:#f8f8f8;">
+	  				<div class="col-xs-12">
+	  					<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-sun-o mar-r10"></i>Recommended System Profile</h3>
+	  				</div>
+	  			</div>
+	  			<div class="row" style="padding-top:40px;">
+	  				<div class="col-xs-6 pad20 text-center" style="padding-top:0; border-right:1px solid #ddd;">
+	  					<h4>You need system size of</h4>
+	  					<h1>25<small>kWp</small></h1>
+	  				</div>
+	  				<div class="col-xs-6 pad20 text-center" style="padding-top:0;">
+	  					<h4>You current energy need is</h4>
+	  					<h1>14,500<small>kWh</small></h1>
+	  				</div>
+	  			</div>
+	  			<div class="row">
+	  				<div class="col-xs-12 text-center" style="padding-top:40px;">
+	  					<h5>This size will cover about <b>100%</b> of your electricity usage.</h5>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+		<div class="col-sm-1"></div>
+	</div>
+    <div class="scroll-icon">
+      <p>Daily Solar Energy Production & Consumption</p>
+      <a href="#fourthSection" class="icon-up-open-big"></a>
+    </div>
+  </section>
+  <!-- section 2: Solar energy production & cost savings -->
+  <section class="vertical-scrolling">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10">
+			<div class="box1">
+				<div class="row"  style="background-color:#f8f8f8;">
+					<div class="col-xs-12">
+						<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-area-chart mar-r10"></i>Daily Solar Energy Production & Consumption</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 pad20 text-center" style="padding-top:0; margin-top:0;">
+						 <div id="curve_chart" style="height:380px; margin-top:0;"></div>
+						 <h6 style="margin-bottom:0;">* Estimated. Actual requirements can only be calculated post installer visit.</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+    <div class="scroll-icon">
+      <p>Finance Options</p>
+      <a href="#fourthSection" class="icon-up-open-big"></a>
+    </div>
+  </section>
+  <section class="vertical-scrolling">
+	<!--  section 3: Finance options -->
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10">
+			<div class="box1">
+				<div class="row"  style="background-color:#f8f8f8;">
+					<div class="col-xs-12">
+						<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-inr mar-r10"></i>Finance Options</h3>
+					</div>
+				</div>
+				<div class="row" style="padding-top:20px;">
+					<div class="col-xs-12 pad20 text-center" style="padding-top:0;">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width:32%;"></th>
+									<th class="text-center" style="width:20%;"><h4 style="margin:0; display:inline;">Pay Nothing</h4></th>
+									<th colspan="2" class="text-center" style="width:20%;"><h4 style="margin:0; display:inline;">Pay Partial</h4></th>
+									<th class="text-center" style="width:20%;"><h4 style="margin:0; display:inline;">Pay Full</h4></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="background-color:#f8f8f8;">
+									<td class="text-left" style="border-right:1px solid #ddd;">
+										<h4 style="margin:0; display:inline;">Cost</h4>
+									</td>
+									<td style="border-right:1px dotted #ddd;">
+										<h3 style="margin:0; display:inline;">0%</h3>
+									</td>
+									<td style="border-right:1px dotted #ddd;">
+										<h3 style="margin:0; display:inline;">15%</h3>
+									</td>
+									<td style="border-right:1px dotted #ddd;">
+										<h3 style="margin:0; display:inline;">30%</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">100%</h3>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										<h4 style="margin:0; display:inline;">Cost after incentives (<i class="fa fa-rupee"></i>)</h4>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">5,20,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">5,40,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">6,00,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">6,20,000</h3>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										<h4 style="margin:0; display:inline;">Average annual savings (<i class="fa fa-rupee"></i>)</h4>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">1,20,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">1,10,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">90,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">80,000</h3>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-left">
+										<h4 style="margin:0; display:inline;">Total 20 yrs savings (<i class="fa fa-rupee"></i>)</h4>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">32,00,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">30,00,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">28,00,000</h3>
+									</td>
+									<td>
+										<h3 style="margin:0; display:inline;">28,00,000</h3>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 text-center" style="padding-top:30px;">
+						<h6>* Above is an computer generated estimate based on the information provided.<br>Accurate estimate will be made available only after the installer's visit to the location where solar panels will be installed.</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+    <div class="scroll-icon">
+      <p>Environmental Impact</p>
+      <a href="#fourthSection" class="icon-up-open-big"></a>
+    </div>
+  </section>
+  <section class="vertical-scrolling">
+	 <!-- section 4: environmental impact -->
+	 <div class="row">
+	 	<div class="col-sm-1"></div>
+	 	<div class="col-sm-10">
+	 		<div class="box1">
+	 			<div class="row" style="background-color:#f8f8f8;">
+	 				<div class="col-xs-12">
+	 					<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-leaf mar-r10"></i>Environmental Impact</h3>
+	 				</div>
+	 			</div>
+				<div style="margin:30px"></div>
+				<div class="row">
+	 				<div class="col-xs-12 pad20 text-center" style="padding-top:0;">
+	 					<h4 style="margin:0px;">CO2 Mitigation Annually</h4>
+	 					<h1 style="margin:0px;">14,500<small>kWh</small></h1>
+	 				</div>
+				</div>
+	 			<div class="row">
+	 				<div class="col-xs-12 text-center">
+	 					<h3 class="decorated" style="margin:0;"><span>Equivalent to</span></h3>
+	 				</div>
+	 			</div>
+	 			<div class="row" style="padding-top:30px; height:100px;">
+	 				<div class="col-xs-4 pad20 text-center" style="border-right:1px solid #ddd;">
+	 					<h4 style="margin:0">Average Driving</h4>
+	 					<img src="/public/dist/img/environ1.jpg" alt="Average Driving" class="img-circle mar-r10" style="display:inline; width:50px;"><h1 style="margin:0; display:inline">4,500<small>kms/yr</small></h1>
+	 				</div>
+	 				<div class="col-xs-4 pad20 text-center" style="border-right:1px solid #ddd;">
+	 					<h4 style="margin:0">Carbon Stored in</h4>
+	 					<img src="/public/dist/img/environ2.jpg" alt="Carbon Stored in Trees" class="img-circle mar-r10" style="display:inline; width:50px;"><h1 style="margin:0; display:inline">1,061<small>Trees</small></h1>
+	 				</div>
+	 				<div class="col-xs-4 pad20 text-center">
+	 					<h4 style="margin:0">Coal Burnt</h4>
+	 					<img src="/public/dist/img/environ3.jpg" alt="Coal Burnt" class="img-circle mar-r10" style="display:inline; width:50px;"><h1 style="margin:0; display:inline">41,373<small>kg</small></h1>
+	 				</div>
+	 			</div>
+	 			<div class="row">
+	 				<div class="col-xs-12 text-center" style="padding-top:30px;">
+	 					<h6>* Estimated.</h6>
+	 				</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 	<div class="col-sm-1"></div>
+	 </div>
+    <div class="scroll-icon">
+      <p>Schedule FREE consultation visit</p>
+      <a href="#fourthSection" class="icon-up-open-big"></a>
+    </div>
+    
+  </section>
+
+	<!-- schedule visit -->  
+  <section class="vertical-scrolling" style="top:180px; ">
+	<form action="javascript:void(0)" method="post" id="userOrder">
+
+		<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+				<div class="box1">
+					<div class="row" style="background-color:#f8f8f8;">
+						<div class="col-xs-12">
+							<h3 class="text-grey text-center" style="margin:20px 0;"><i class="fa fa-calendar mar-r10"></i>FREE Consultation Visit</h3>
+						</div>
+					</div>
+					<div class="row" style="padding-top:30px;">
+						<div class="col-xs-5 text-right"><h4>Visit time</h4></div>
+						<div class="col-xs-2 text-left">
+							<div class="input-group" style="width:150px; padding:0px; padding-bottom:5px;">
+							  <input id="visit_date" type="text" class="form-control" aria-label="">
+							  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+							</div>
+						</div>
+						<div class="col-xs-5 text-left">
+							<select id="visit_time" class="select2 text-left" style="display:inline; width:150px;"><option selected>09:00</option><option>10:00</option></select>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-6" style="border-right:1px solid #ddd;">
+							<h4>Solar panel installation location</h4>
+							<div class="row">
+								<div class="col-xs-12 text-left" style="padding-top:0px;">
+									<select id="location" class="select2" style="display:inline; width:150px;"><option selected>Gurgaon</option><option disabled>Faridabad</option></select>
+										<a class="btn btn-link" role="button" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3" style="margin:0; padding:0;"><i class="fa fa-map-marker" style="margin-left:10px;"></i>&nbsp;Locate using GPS</a>
+									<input id="Address_line_1" type="text" class="form-control" placeholder="Address line 1" style="width:100%; margin-top:5px; margin-bottom:5px;">
+									<input type="text" id="Address_line_2" class="form-control" placeholder="Address line 2" style="width:100%; margin-bottom:5px;">
+									<input class="form-control" placeholder="PIN" id="pin" style="width:80px; margin-bottom:5px;" name="pin">
+								</div>
+							</div>
+						</div>
+							<div class="col-sm-6">
+								<h4>Owner details</h4>
+								<div class="col-xs-12 text-left" style="padding-top:0px;">
+									<input type="checkbox" id="isOwner" checked> I am the owner
+									<select class="select2 form-control" id="salutation" style="width:60px; height:24px;">
+									  <option>Mr</option>
+									  <option>Mrs</option>
+									  <option>Ms</option>						  
+									</select>
+									<input type="text" id="first_name" class="form-control" placeholder="First Name" style="width:200px; margin-top:5px; margin-bottom:5px; display:inline;">
+									<input type="text" id="last_name" class="form-control" placeholder="Last Name" style="width:200px; margin-bottom:5px; display:inline;">
+									<input id="phone" type="tel" class="form-control" placeholder="Phone no" style="width:120px; margin-bottom:5px;"  pattern=".{10}"  maxlength="10">
+									<input id="email" type="email" class="form-control"placeholder="Email ID" required aria-required="true" style="width:250px; margin-bottom:5px;">
+								</div>
+							</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 text-center" style="padding-top:0px;">
+							<h6>And yes, our consultation is <b>absolutely Free</b>. No obligation. No Hidden charges.</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<div style="margin:20px;">
+			<h4 class="text-grey text-center" style="margin:5px;">For any further details you can contact us at: +91-7822-094-340</h4>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<button class="btn btn-default" onClick="document.location.href='user_explore.html'">Cancel</button>
+				<input type="submit" class="btn btn-warning" value="Schedule Visit" />
+			</div>
+		</div>
+	</form>
+  </section>
+  
+</div>
+<script src="/public/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+<script src="/public/dist/js/fullpage.js"></script>
+<script src="/public/dist/js/index.js"></script>
+<!-- jQuery 1.12.4 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap 3.3.78.5463 JS -->
+<script src="/public/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- Select2: plugin for styling select boxes -->
+<script src="/public/plugins/select2/select2.full.min.js" type="text/javascript"></script>
+<!-- Chart: Google charts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<!-- angular JS-->
+<script src="/public/plugins/angular/angular.min.js"></script>
+<script src="/public/dist/js/search.js"></script>
+<!-- Initialize Select2 elements -->
+<script type="text/javascript">
+$(function () {
+	$(".select2").select2();
+});
+</script>
+<script>
+	function initialize() {
+		var mapCanvas = document.getElementById('map');
+		var mapOptions = {
+		  center: new google.maps.LatLng(44.5403, 78.5463),
+		  zoom: 8,
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		var map = new google.maps.Map(mapCanvas, mapOptions)
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!-- chart -->
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Solar Production', 'Energy Consumption'],
+          ['12am',  0,       800],
+          ['2am',  0,       800],
+          ['4am',  0,       800],
+          ['6am',  10,       400],
+          ['8am',  60,       200],
+          ['10am',  100,       100],
+		  ['12pm',  400,      50],
+		  ['2pm',  600,      60],			
+		  ['4pm',  400,      100],			
+		  ['6pm',  200,      200],									
+          ['8pm',  60,      400],
+          ['10pm',  0,       1000],																																																								
+          ['12am',  0,      900]
+        ]);
+
+        var options = {
+          title: '',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
+</html>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div style="padding:20px;"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+			<div class="modal-body" style="padding:0 50px;">
+			<h3 id="myModalLabel">Thank you!</h3>
+			We have received your request for <b>500 mw Solar panel installation with contract option 2 (95% upfront payment)</b>. An email has been sent to your registered email address for your reference.<br><br>
+			Please note:<br><br>
+			<ul>
+				<li>In next couple of days, you will receive a detailed contract along installation details will be mailed to your registered address along with other instructions.</li>
+				<li>Please sign it and send it back our registered address along with cheque for <i class="fa fa-rupee"></i><b>2,45,000</b> in the name of <b>8 Minutes Energy</b>.<li>
+			</ul>
+			For any further enquiries please contact: <b>+91-7822-094-340</b> or email us at: <a href="mailto:switch@8minutes.com">switch@8minutes.com</a>
+			Regards,<br>
+			<img src="/public/dist/img/logo_8minutes.png" style="width:150px;" alt="8Minutes Logo">
+			</div>
+			<div class="modal-footer" style="border-top:0;">
+				<div class="text-center"><button type="button" class="btn btn-warning" id="close" >Close</button></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+	$(function () {
+		
+		if(window.sessionStorage.rooftopArea && window.sessionStorage.monthlyBill && window.sessionStorage.installAt ){
+
+		}else{
+			document.location.href='user_explore.html';
+		}
+	})
+
+
+	$("#userOrder").on("submit",function (argument) {
+
+		var location       = $("#location").val();
+		var first_name     = $("#first_name").val();
+		var last_name      = $("#last_name").val();
+		var phone          = $("#phone").val();
+		var Address_line_1 = $("#Address_line_1").val();
+		var Address_line_2 = $("#Address_line_2").val();
+		var email          = $("#email").val();
+		var visit_date     = $("#visit_date").val();
+		var visit_time     = $("#visit_time").val();
+		var pin            = $("#pin").val();
+		var salutation     = $("#salutation").val();
+		var isOwner        = $("#isOwner").val();
+		var id;
+
+		var data = {
+			rooftop_area     : window.sessionStorage.rooftopArea,
+			current_avg_bill : window.sessionStorage.monthlyBill,
+			installAt        : window.sessionStorage.installAt,
+			req_visit_time   : visit_time,
+			req_visit_date   : visit_date,
+			address_l1       : Address_line_1,
+			address_l2       : Address_line_2,
+			location         : location,
+			pin              : pin,
+			owner_salutation : salutation,
+			owner_fname      : first_name,
+			owner_lname      : last_name,
+			owner_phone      : phone,
+			owner_email      : email
+		}
+		
+		data["token"] = window.sessionStorage.token;
+
+		$.ajax({
+			url:"/api/requirement",
+			type:"POST",
+			data:data,
+			success: function (d) {
+				id = d.id;
+				delete window.sessionStorage.rooftopArea
+				delete window.sessionStorage.monthlyBill  
+				delete window.sessionStorage.installAt
+				$("#myModal").modal();
+			}
+		});
+
+
+		$("#close").on("click",function () {
+			document.location.href = "user_schedule.html#" + id;
+		})
+	})
+</script>
+

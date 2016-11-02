@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>8 Minutes Energy: Installation Status</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link href="/public/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="/public/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />	
+	<link href="/public/dist/css/8minutes.css" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet prefetch' href='/public/dist/css/fullpage.css'>
+	<link rel="stylesheet" href="/public/dist/css/style.css">
+	<!-- Select2: plugin for select box styling -->
+
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<style type="text/css">
+		.popover{
+			max-width:100%;
+			height:200px;
+			margin-left:200px;
+		}		
+	    #map {
+			width: 350px;
+			height: 200px;
+		}
+	</style>	
+</head>
+<body class="container-fluid" style="background-color:#f0f0f0;">	
+<div class="row">
+	<div class="col-xs-12 topHeader e-shadow1 bg-white" style="position:fixed; z-index:100; ">
+		<div class="row">
+			<div class="col-xs-11">
+				<img src="/public/dist/img/logo_8minutes.png" alt="8Minutes Logo">
+				<div class="pull-right grey" style="padding-top:20px;">
+					<a href="user_dashboard.html" class="navInactive">My Dashboard</a>&#8226;
+					<a href="user_explore.html" class="navInactive">Go Solar</a>&#8226;
+					<a href="user_installation.html" class="navActive">My Installations</a>&#8226;
+					<a href="user_referrals.html" class="navInactive">My Referrals</a>
+				</div>
+			</div>
+			<div class="col-xs-1" style="padding-top:20px;">
+				<div class="profileImg" style="background-image:url('/public/dist/img/me1.jpg');">&nbsp;</div>
+				<div class="dropdown" style="display:inline;">
+				  <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border:0;">
+				   <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu dropdown-menu-right" style="font-size:12px" aria-labelledby="dropdownMenu1">
+				    <li><a href="user_profile.html">MY PROFILE</a></li>
+				    <li><a href="user_contact.html">CONTACT <span style="font-weight:500;">8MINUTES</span></a></li>					
+				    <li role="separator" class="divider"></li>
+				    <li><a href="#">LOGOUT</a></li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row" style="background-color:#f8f8f8; padding:5px 50px; top:55px; position:fixed; border-bottom:1px solid #ddd; z-index:99; width:100%; height:78px;">
+	<div class="col-xs-12 pad20">
+		<div class="pull-right">
+			View installation progress for
+			<select class="select2" name="order" style="width:300px;" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+				<option value="user_installation.html">Kutub Plaza, Delhi</option>
+				<option value="user_installation1.html" selected>Sikandarpur, Gurgaon</option>				
+			</select>
+		</div>
+	</div>
+</div>
+<div style="margin:20px;"></div>
+<div id="fullpage" style="vertical-align:top;">
+  <section class="vertical-scrolling" style="vertical-align:top;">
+  	<h2 class="text-grey text-center" style="margin:0;">Here are your approved designs</h2>
+	  <p style="margin:30px;">
+	  <div class="row">
+	  	<div class="col-sm-1"></div>
+	  	<div class="col-sm-10" >
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="box1 text-center" style="height:300px;">
+						<h4 style="margin:20px;">Installation Design</h4>
+						<img src="/public/dist/img/design1.jpg" alt="Installation Design" style="border:1px solid #ddd;">
+						<h6>Download</h6>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="box1 text-center" style="height:300px;">
+						<h4 style="margin:20px;">Architecture Drawing</h4>
+						<img src="/public/dist/img/design2.jpg" alt="Architecture Drawing" style="height:200px; border:1px solid #ddd;">
+						<h6>Download</h6>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="box1 text-center" style="height:300px;">
+						<h4 style="margin:20px;">Wiring</h4>
+						<img src="/public/dist/img/design3.jpeg" alt="Wiring" style="height:200px; border:1px solid #ddd;">
+						<h6>Download</h6>
+					</div>
+				</div>
+				<div class="col-xs-3">
+				</div>
+			</div>
+	  	</div>
+		<div class="col-sm-1"></div>
+	</div>
+    <div class="scroll-icon">
+      <p>Installation Timline</p>
+      <a href="#secondSection" class="icon-up-open-big"></a>
+    </div>
+  </section>
+  <!-- section 2: Installation Timeline -->
+  <section class="vertical-scrolling">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10">
+				<h2 class="text-grey text-center" style="margin:0px 0;">Installation Timline (Expected)</h2>
+				<h4>Start Date: 30 Oct 2016 | End Date: 14 Jan 2017</h4>
+				<div style="padding-top:30px;">
+
+				  <div id="timeline1" style="height:350px;"></div>
+
+				</div>
+				<div class="row" style="padding-top:40px;">
+					<div class="col-xs-12 pad20 text-center" style="padding-top:0;">
+						
+					</div>
+				</div>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+    <div class="scroll-icon">
+      <p>Installation Details</p>
+      <a href="#thirdSection" class="icon-up-open-big"></a>
+    </div>
+  </section>
+  <!-- section 3: Installation Details -->
+  <section class="vertical-scrolling">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10">
+				<h2 class="text-grey text-center" style="margin:0px 0;">Installation Details</h2>
+				<h4>Start Date: 30 Oct 2016 | End Date: 14 Jan 2017</h4>
+				<div style="padding-top:30px;">
+					<table class="table">
+						<thead>
+							<tr>
+								<td style="width:1%;">#</td>
+								<td style="width:25%">Activity</td>
+								<td>Description</td>
+								<td>Status</td>
+							</tr>
+						</thead>
+						<tbody>
+					  	  	<tr>
+								<td>1</td>							
+								<td class="text-left"><b>Design approval</b></td>
+								<td class="text-left">Two ways to make electricity from solar energy are photovoltaics and solar thermal systems.</td>
+								<td>Completed</td>						
+							</tr>
+							<tr>
+								<td>2</td>							
+								<td class="text-left"><b>Structure Assembly</b></td>
+								<td class="text-left">Photovoltaic comes from the words photo meaning light and volt, a measurement of electricity. Photovoltaic cells are also called PV cells or solar cells for short. You are probably familiar with cells.</td>
+								<td>Completed</td>						
+							</tr>
+							<tr>
+								<td>3</td>							
+								<td class="text-left"><b>Panel Mounting</b></td>
+								<td class="text-left">Energy in photovoltaics and solar thermal systems and from the words photo meaning light and volt, a measurement of electricity. Photovoltaic cells are also called PV cells or solar cells for short.</td>
+								<td>Completed</td>						
+							</tr>
+							<tr>
+								<td>4</td>							
+								<td class="text-left"><b>Electrical Connections</b></td>
+								<td class="text-left">The words photo meaning light and volt, a measurement of electricity. You are probably familiar with photovoltaic cells.</td>
+								<td>Completed</td>						
+							</tr>
+							<tr>
+								<td>5</td>							
+								<td class="text-left"><b>Inverter Installations</b></td>
+								<td class="text-left">Two ways to make electricity from solar energy are photovoltaics and solar thermal systems. Photovoltaic comes from the words photo meaning light and volt with photovoltaic cells.</td>
+								<td>Completed</td>						
+							</tr>
+							<tr>
+								<td>6</td>								
+								<td class="text-left"><b>Remote Monitoring</b></td>
+								<td class="text-left">Photovoltaic comes from the words photo meaning or solar cells for short. You are probably familiar with photovoltaic cells.</td>
+								<td>Completed</td>						
+							</tr>
+							<tr>
+								<td>7</td>							
+								<td class="text-left"><b>Quality Check & System Live</b></td>
+								<td class="text-left">Two ways to make electricity from solar energy are photovoltaics and solar thermal systems. </td>
+								<td>Completed</td>						
+							</tr>
+							<tr>
+								<td>8</td>							
+								<td class="text-left"><b>Net Metering Approval</b></td>
+								<td class="text-left">Two ways to make electricity from solar energy are photovoltaics and solar thermal systems.</td>
+								<td>Completed</td>						
+							</tr>
+						</tbody>	
+					</table>
+				</div>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+  </section>
+</div>
+<script src="/public/plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+<script src="/public/dist/js/fullpage.js"></script>
+<script src="/public/dist/js/index.js"></script>
+<!-- jQuery 1.12.4 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap 3.3.78.5463 JS -->
+<script src="/public/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- Select2: plugin for styling select boxes -->
+<script src="/public/plugins/select2/select2.full.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!-- angular JS-->
+<script src="/public/plugins/angular/angular.min.js"></script>
+<script src="/public/dist/js/search.js"></script>
+<!-- select2 -->
+<script type="text/javascript">
+$(function () {
+	//Initialize Select2 Elements
+	$(".select2").select2();
+});
+</script>
+<!-- timeline 1: google chart -->
+<script type="text/javascript">
+google.charts.load('current', {'packages':['timeline']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  var container = document.getElementById('timeline1');
+  var chart = new google.visualization.Timeline(container);
+  var dataTable = new google.visualization.DataTable();
+  dataTable.addColumn({ type: 'string', id: 'Activity' });
+  dataTable.addColumn({ type: 'date', id: 'Start' });
+  dataTable.addColumn({ type: 'date', id: 'End' });
+  dataTable.addRows([
+    [ 'Structure Assembly', new Date(2016, 9, 30), new Date(2016, 10, 4) ],
+    [ 'Panel Mounting', new Date(2016, 10, 5), new Date(2016, 10, 8) ],
+    [ 'Electrical Connections', new Date(2016, 10, 9), new Date(2016, 10, 12) ],
+    [ 'Inverter Installations', new Date(2016, 10, 14), new Date(2016, 10, 14) ],
+    [ 'Remote Monitoring', new Date(2016, 10, 20), new Date(2016, 10, 30) ],
+    [ 'Quality Check & System Live', new Date(2016, 11, 4), new Date(2016, 11, 5) ],	  	  	  	  	  
+    [ 'Net Metering Approval',  new Date(2017, 0, 6),  new Date(2017, 0, 14) ]]);
+
+  chart.draw(dataTable);
+}
+</script>
+<!-- timeline 2: google chart -->
+<script type="text/javascript">
+google.charts.load('current', {'packages':['timeline']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  var container = document.getElementById('timeline2');
+  var chart = new google.visualization.Timeline(container);
+  var dataTable = new google.visualization.DataTable();
+  dataTable.addColumn({ type: 'string', id: 'Activity' });
+  dataTable.addColumn({ type: 'date', id: 'Start' });
+  dataTable.addColumn({ type: 'date', id: 'End' });
+  dataTable.addRows([
+    [ 'Structure Assembly', new Date(2016, 9, 30), new Date(2016, 10, 4) ],
+    [ 'Panel Mounting', new Date(2016, 10, 5), new Date(2016, 10, 8) ],
+    [ 'Electrical Connections', new Date(2016, 10, 9), new Date(2016, 10, 12) ],
+    [ 'Inverter Installations', new Date(2016, 10, 14), new Date(2016, 10, 14) ],
+    [ 'Remote Monitoring', new Date(2016, 10, 20), new Date(2016, 10, 30) ],
+    [ 'Quality Check & System Live', new Date(2016, 11, 4), new Date(2016, 11, 5) ],	  	  	  	  	  
+    [ 'Net Metering Approval',  new Date(2017, 0, 6),  new Date(2017, 0, 14) ]]);
+
+  chart.draw(dataTable);
+}
+</script>
+  </body>
+</html>
