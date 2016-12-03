@@ -17,9 +17,9 @@ mongoose.connect(connStr, function(err) {
 //var csrfProtection = csrf({ cookie: true });  
 
 var app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json())
-app.use(bodyParser.text())
+app.use(bodyParser.urlencoded({limit: '50mb', extended: false }));
+app.use(bodyParser.text({limit: '50mb'}))
+app.use(bodyParser.json({limit: '50mb'}))
 // we need this because "cookie" is true in csrfProtection 
 //app.use(cookieParser());
 
