@@ -20,7 +20,7 @@ you are ready to explore this Boilerplate !!!
     - i prefer to use "yarn"
  - node app.js
     - before that update MongoDB url in "file:app.js"
-      var connStr = 'mongodb://<username>:<password>@<domainName>:<port>/<DatabaseName>';
+     ```var connStr = 'mongodb://<username>:<password>@<domainName>:<port>/<DatabaseName>';```
  
 ##Use the APIs
 
