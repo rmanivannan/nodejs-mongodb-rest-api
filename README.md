@@ -9,6 +9,7 @@ Boilerplate for REST API with oauth(login)  using nodejs mongoose/mongodb expres
  - Mongodb
     - if it is taking more time to setup MongoDB, use online DB(https://mlab.com), there is free plan ☺
  - REST Client Tool (POST Mastor tool - Chrome plugin)
+ - Of course javascript knowledge
 
 You are ready to explore this !!!
 
@@ -88,8 +89,9 @@ Response Data
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyIkX18iOnsic3RyaWN0TW9kZSI6dHJ1ZSwiZ2V0dGVycyI6e30sIndhc1BvcHVsYXRlZCI6ZmFsc2UsImFjdGl2ZVBhdGhzIjp7InBhdGhzIjp7InJvbGUiOiJpbml0IiwicGhvbmUiOiJpbml0IiwiZW1haWwiOiJpbml0IiwibG5hbWUiOiJpbml0IiwiZm5hbWUiOiJpbml0IiwiY2lkIjoiaW5pdCIsInBhc3N3b3JkIjoiaW5pdCIsInVzZXJuYW1lIjoiaW5pdCIsIl9fdiI6ImluaXQiLCJzdGF0ZSI6ImluaXQiLCJzYWx1dGF0aW9uIjoiaW5pdCIsIl9pZCI6ImluaXQifSwic3RhdGVzIjp7Imlnbm9yZSI6e30sImRlZmF1bHQiOnt9LCJpbml0Ijp7Il9fdiI6dHJ1ZSwicm9sZSI6dHJ1ZSwic3RhdGUiOnRydWUsInBob25lIjp0cnVlLCJlbWFpbCI6dHJ1ZSwibG5hbWUiOnRydWUsImZuYW1lIjp0cnVlLCJzYWx1dGF0aW9uIjp0cnVlLCJjaWQiOnRydWUsInBhc3N3b3JkIjp0cnVlLCJ1c2VybmFtZSI6dHJ1ZSwiX2lkIjp0cnVlfSwibW9kaWZ5Ijp7fSwicmVxdWlyZSI6e319LCJzdGF0ZU5hbWVzIjpbInJlcXVpcmUiLCJtb2RpZnkiLCJpbml0IiwiZGVmYXVsdCIsImlnbm9yZSJdfSwiZW1pdHRlciI6eyJkb21haW4iOm51bGwsIl9ldmVudHMiOnt9LCJfZXZlbnRzQ291bnQiOjAsIl9tYXhMaXN0ZW5lcnMiOjB9fSwiaXNOZXciOmZhbHNlLCJfZG9jIjp7Il9fdiI6MCwicm9sZSI6IlVTRVIiLCJzdGF0ZSI6IktBIiwicGhvbmUiOiI1NTc3NDQyMjMzIiwiZW1haWwiOiJtYW5pdmFubmFuMTN0bmpAZ21haWwuY29tIiwibG5hbWUiOiJSYWRoYWsiLCJmbmFtZSI6Ik1hbml2YW5uYW4iLCJzYWx1dGF0aW9uIjoiTXIiLCJjaWQiOiJDNiIsInBhc3N3b3JkIjoiJDJhJDEwJG01ZFhCSzNSaW5EZ2pYMXcyVndHdC5zcUV4TnpicUlNUURiTDhPNXdlcHU5Szc4R2NtUFhPIiwidXNlcm5hbWUiOiJ1c2VybmFtZTExdyIsIl9pZCI6IjU4NDI3MDlmYTA5NGY5MzhhMDdjYTFhMSJ9LCJfcHJlcyI6eyIkX19vcmlnaW5hbF9zYXZlIjpbbnVsbCxudWxsLG51bGxdLCIkX19vcmlnaW5hbF92YWxpZGF0ZSI6W251bGxdLCIkX19vcmlnaW5hbF9yZW1vdmUiOltudWxsXX0sIl9wb3N0cyI6eyIkX19vcmlnaW5hbF9zYXZlIjpbXSwiJF9fb3JpZ2luYWxfdmFsaWRhdGUiOltdLCIkX19vcmlnaW5hbF9yZW1vdmUiOltdfSwiaWF0IjoxNDgwNzQ5NDgzLCJleHAiOjE0ODA3NTQyODN9.wLUBRKen6KfCpOImDndXsU5gevxEjD7UwamlaN_h2Yo"
 }
 ```
-Here you go ☺ , AUTH Token is created. You can user this access token to acccess other APIs.
+Here you go ☺ , AUTH Token is created. You can use this access token to acccess other APIs.
 
 #### Note: 
- - Could be helpful for learning but current version may not suitable for PROD(yet to explore)
- - feel free criticize, suggest & log bug
+ - Could be helpful for learning  
+ - Be the first to explore on PROD
+ - Feel free criticize, suggest & log bug
