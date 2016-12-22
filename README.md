@@ -89,3 +89,7 @@ Response Data
 }
 ```
 Here you go ☺ , AUTH Token is created. You can user this access token to acccess other APIs.
+
+#### Note: 
+Could be helpful for learning but current version may not suitable for PROD(yet to explore)
+feel free criticize, suggest & log bug if any
