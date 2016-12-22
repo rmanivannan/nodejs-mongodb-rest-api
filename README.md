@@ -10,7 +10,7 @@ Boilerplate for REST API with oauth(login)  using nodejs mongoose/mongodb expres
     - if it is taking more time to setup MongoDB, use online DB(https://mlab.com), there is free plan ☺
  - REST Client Tool (POST Mastor tool - Chrome plugin)
 
-you are ready to explore this Boilerplate !!!
+You are ready to explore this !!!
 
 ##Steps to setup this application
 
