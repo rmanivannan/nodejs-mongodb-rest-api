@@ -2,7 +2,7 @@ Nodejs mongodb REST API
 =======================================
 Boilerplate for REST API with oauth(login)  using nodejs mongoose/mongodb expressjs
 
-##Prerequisites 
+## Prerequisites 
 
  - GIT, if not you may use Download as zip option (Thanks to github)
  - Nodejs
@@ -13,7 +13,7 @@ Boilerplate for REST API with oauth(login)  using nodejs mongoose/mongodb expres
 
 Now, You are ready to explore this !!!
 
-##Steps to setup this application
+## Steps to setup this application
 
  - git clone https://github.com/rmanivannan/nodejs-mongodb-rest-api.git
  - cd nodejs-mongodb-rest-api
@@ -23,9 +23,9 @@ Now, You are ready to explore this !!!
     - before that update MongoDB url in "file:app.js"
      ```var connStr = 'mongodb://<username>:<password>@<domainName>:<port>/<DatabaseName>';```
  
-##Use the APIs
+## Use the APIs
 
-###Open REST Client
+### Open REST Client
 
 Use below API details to Create User Account 
 
