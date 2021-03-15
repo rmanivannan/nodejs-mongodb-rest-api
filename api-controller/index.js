@@ -28,11 +28,11 @@ var Routes = {
 		for(var item in tableControllers){
 			var ctrl = tableControllers[item];
 			apiRoutes.post  ('/'+ item ,               ctrl.add);
-			apiRoutes.post  ('/'+ item +'/all',        ctrl.getAll); // it should be get but for safty purpose its addede as post
-			apiRoutes.post  ('/'+ item +'/:id',        ctrl.getById); // it should be get but for safty purpose its addede as post
+			apiRoutes.post  ('/'+ item +'/all',        ctrl.getAll); // it should be get
+			apiRoutes.post  ('/'+ item +'/:id',        ctrl.getById); // it should be get
 			apiRoutes.put   ('/'+ item +'/:id',        ctrl.putById);
 			apiRoutes.patch ('/'+ item +'/:id',        ctrl.putById);
-			apiRoutes.post  ('/'+ item +'/:id/delete', ctrl.deleteById);// it should be get but for safty purpose its addede as post
+			apiRoutes.post  ('/'+ item +'/:id/delete', ctrl.deleteById);// it should be get
 		}
 
 	},
